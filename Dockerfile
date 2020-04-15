@@ -19,11 +19,13 @@ RUN INSTALL_PKGS="java-11-openjdk-devel.x86_64 java-1.8.0-openjdk-devel.x86_64 m
     yum clean all -y && \
     mkdir -p $HOME/.m2 
     
+RUN mvn -version
+RUN java -version
 # Google Chrome
-RUN yum -y --setopt=tsflags=nodocs update && \
-  yum -y --setopt=tsflags=nodocs install socat && \
-  yum -y --setopt=tsflags=nodocs install wget && \
-  yum -y --setopt=tsflags=nodocs install git && \
-  yum -y --setopt=tsflags=nodocs install tmux && \
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
-  yum -y install ./google-chrome-stable_current_x86_64.rpm
+#RUN yum -y --setopt=tsflags=nodocs update && \
+ # yum -y --setopt=tsflags=nodocs install socat && \
+ # yum -y --setopt=tsflags=nodocs install wget && \
+ # yum -y --setopt=tsflags=nodocs install git && \
+ # yum -y --setopt=tsflags=nodocs install tmux && \
+ # wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+ # yum -y install ./google-chrome-stable_current_x86_64.rpm
