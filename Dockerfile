@@ -8,7 +8,7 @@ RUN INSTALL_PKGS="java-11-openjdk.x86_64 maven=MAVEN_VERSION" && \
     DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-fast-datapath --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl" && \
     yum $DISABLES install -y $INSTALL_PKGS
     
-RUN mvn -version
+#RUN mvn -version
 RUN java -version
 # Google Chrome
 #RUN yum -y --setopt=tsflags=nodocs update && \
