@@ -1,2 +1,2 @@
 # maven-chrome
-Jenkins slave based on openshit
+Jenkins slave based on openshift
