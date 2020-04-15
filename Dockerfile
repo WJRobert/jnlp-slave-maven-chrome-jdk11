@@ -19,7 +19,7 @@ RUN INSTALL_PKGS="java-11-openjdk-devel.x86_64 java-1.8.0-openjdk-devel.x86_64 m
     yum clean all -y && \
     mkdir -p $HOME/.m2 
     
-    # Google Chrome
+# Google Chrome
 RUN yum -y --setopt=tsflags=nodocs update && \
   yum -y --setopt=tsflags=nodocs install socat && \
   yum -y --setopt=tsflags=nodocs install wget && \
