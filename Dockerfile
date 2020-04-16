@@ -4,12 +4,12 @@ FROM quay.io/openshift/origin-jenkins-agent-maven:4.4
 
 # Install Java and Maven
 
-    
-# List installed and available packages from repositories:
-RUN yum list all
-# List only installed packages:
-RUN yum list installed
-# List only available packages:
-RUN yum list available
-# List installed and available kernel packages:
-RUN yum list kernel
+
+RUN DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-fast-datapath --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl" && \ \n
+  yum $DISABLES -y --setopt=tsflags=nodocs update && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install socat && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install wget && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install git && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install tmux && \
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+  yum $DISABLES-y install ./google-chrome-stable_current_x86_64.rpm
