@@ -13,5 +13,6 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm
 USER 1001
 
+RUN google-chrome --version 
 #FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
 #FROM quay.io/openshift/origin-jenkins-agent-maven:4.1.0
