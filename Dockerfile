@@ -10,7 +10,7 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   yum $DISABLES -y --setopt=tsflags=nodocs install git && \
   yum $DISABLES -y --setopt=tsflags=nodocs install tmux && \
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
-  yum $DISABLES-y install ./google-chrome-stable_current_x86_64.rpm
+  yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm
 USER 1001
 
 #FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
