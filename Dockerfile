@@ -5,7 +5,7 @@ FROM quay.io/openshift/origin-jenkins-agent-maven:4.4
 # Install Java and Maven
 
 
-RUN DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-fast-datapath --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl" && \ \n
+RUN DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-fast-datapath --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl" && \
   yum $DISABLES -y --setopt=tsflags=nodocs update && \
   yum $DISABLES -y --setopt=tsflags=nodocs install socat && \
   yum $DISABLES -y --setopt=tsflags=nodocs install wget && \
