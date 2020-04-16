@@ -1,4 +1,5 @@
-FROM quay.io/openshift/origin-jenkins-agent-maven:4.4.0
+FROM openshift/jenkins-agent-maven-35-centos7:v4.0
+#FROM quay.io/openshift/origin-jenkins-agent-maven:4.4.0
 
 
 # Install Java and Maven
