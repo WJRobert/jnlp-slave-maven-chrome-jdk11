@@ -1,6 +1,5 @@
 #FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
-FROM quay.io/openshift/origin-jenkins-agent-maven:4.4
-
+FROM quay.io/openshift/origin-jenkins-agent-maven:4.1.0
 
 # Install Java and Maven
 USER root\n
