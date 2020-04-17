@@ -12,8 +12,9 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm && \
   wget http://mirror.centos.org/centos/7/updates/x86_64/Packages/java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
-  yum $DISABLES -y install ./java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm
-RUN  yum -y install maven-install-pulgin
+  yum $DISABLES -y install ./java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
+  wget http://mirror.centos.org/centos/7/os/x86_64/Packages/maven-local-3.4.1-11.el7.noarch.rpm && \
+  yum $DISABLES -y install ./maven-local-3.4.1-11.el7.noarch.rpm
 USER 1001
 
 RUN google-chrome --version 
