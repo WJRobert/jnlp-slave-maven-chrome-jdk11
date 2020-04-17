@@ -1,4 +1,4 @@
-FROM quay.io/openshift/origin-jenkins-agent-maven:4.2.0
+FROM quay.io/openshift/origin-jenkins-agent-maven:4.2
 USER root
 RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/alsadi-dumb-init-epel-7.repo -o /etc/yum.repos.d/alsadi-dumb-init-epel-7.repo
 RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo 
