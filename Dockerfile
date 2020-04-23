@@ -15,7 +15,8 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   wget http://mirror.centos.org/centos/7/os/x86_64/Packages/maven-local-3.4.1-11.el7.noarch.rpm && \
   yum $DISABLES -y install ./maven-local-3.4.1-11.el7.noarch.rpm
   
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java  
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64
+ENV PATH /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java
   
 # for main web interface:
 EXPOSE 8080
