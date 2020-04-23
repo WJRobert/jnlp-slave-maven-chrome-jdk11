@@ -10,10 +10,10 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm && \
   wget http://mirror.centos.org/centos/7/updates/x86_64/Packages/java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
   yum $DISABLES -y install ./java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
-  alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java && \ 
-  alternatives --set jre /usr/lib/jvm/jre-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java && \
   wget http://mirror.centos.org/centos/7/os/x86_64/Packages/maven-local-3.4.1-11.el7.noarch.rpm && \
-  yum $DISABLES -y install ./maven-local-3.4.1-11.el7.noarch.rpm 
+  yum $DISABLES -y install ./maven-local-3.4.1-11.el7.noarch.rpm && \
+  alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java && \ 
+  alternatives --set jre /usr/lib/jvm/jre-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java 
   
 RUN echo 'starting jenkins'
 RUN yum service jenkins start
