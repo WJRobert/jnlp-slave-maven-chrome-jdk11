@@ -13,10 +13,7 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   wget http://mirror.centos.org/centos/7/updates/x86_64/Packages/java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
   yum $DISABLES -y install ./java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
   alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.4.11-1.el7_7.x86_64/bin/java
-RUN echo 'Installing Jenkins'
-RUN curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
-RUN sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
-RUN sudo yum install jenkins
+
 RUN echo 'starting jenkins'
 RUN sudo systemctl start jenkins
 RUN systemctl status jenkins
