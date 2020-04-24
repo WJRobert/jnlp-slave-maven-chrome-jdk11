@@ -2,7 +2,8 @@ FROM quay.io/openshift/origin-jenkins-agent-maven:4.6.0
 
 USER root
 
-RUN yum -y --setopt=tsflags=nodocs update && \
+RUN yum-config-manager --save --setopt=rhel-fast-datapath.skip_if_unavailable=true &&\
+  yum -y --setopt=tsflags=nodocs update && \
   yum -y --setopt=tsflags=nodocs install wget && \
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
   yum -y install ./google-chrome-stable_current_x86_64.rpm
