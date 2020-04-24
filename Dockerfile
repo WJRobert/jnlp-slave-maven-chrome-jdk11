@@ -43,11 +43,6 @@ RUN curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentOS
     unlink /usr/share/man/man1/rmiregistry.1.gz && \
     unlink /usr/share/man/man1/unpack200.1.gz
 
-# Copy the entrypoint
-ADD contrib/bin/* /usr/local/bin/
-
-# Run the Jenkins JNLP client
-ENTRYPOINT ["/usr/bin/go-init", "-main", "/usr/local/bin/run-jnlp-client"]
 
 
 #RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/alsadi-dumb-init-epel-7.repo -o /etc/yum.repos.d/alsadi-dumb-init-epel-7.repo && \ 
