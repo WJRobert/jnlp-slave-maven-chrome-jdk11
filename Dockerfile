@@ -3,7 +3,7 @@ FROM quay.io/openshift/origin-jenkins-agent-maven:4.6.0
 USER root
 ARG DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-fast-datapath --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl"
 
-RUN yum $DISABLES y --setopt=tsflags=nodocs update && \
+RUN yum $DISABLES -y --setopt=tsflags=nodocs update && \
 yum $DISABLES -y --setopt=tsflags=nodocs install wget && \
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
 yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm
