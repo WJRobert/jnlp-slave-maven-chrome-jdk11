@@ -9,6 +9,7 @@ RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentO
   DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl --disablerepo=rhel-fast-datapath-beta --disablerepo=rhel-fast-datapath" && \
   yum $DISABLES -y --setopt=tsflags=nodocs update && \
   yum $DISABLES -y --setopt=tsflags=nodocs install wget && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install gzip && \
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm && \
   alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin/java && \
