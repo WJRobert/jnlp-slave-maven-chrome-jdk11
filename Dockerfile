@@ -4,7 +4,8 @@ USER root
 
 # curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/alsadi-dumb-init-epel-7.repo -o /etc/yum.repos.d/alsadi-dumb-init-epel-7.repo && \ 
 RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentOS-Base.repo -o /etc/yum.repos.d/CentOS-Base.repo && \
-  curl http://mirror.centos.org/centos-8/8/os/x86_64/RPM-GPG-KEY-CentOS-Official -o /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial && \
+  curl http://mirror.centos.org/centos-7/7/os/x86_64/RPM-GPG-KEY-CentOS-7 -o /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 && \
+ # curl http://mirror.centos.org/centos-8/8/os/x86_64/RPM-GPG-KEY-CentOS-Official -o /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial && \
   DISABLES="--disablerepo=rhel-server-extras --disablerepo=rhel-server --disablerepo=rhel-server-optional --disablerepo=rhel-server-ose --disablerepo=rhel-server-rhscl" && \
   yum $DISABLES --disablerepo=rhel-fast-datapath --disablerepo=rhel-fast-datapath-beta -y --setopt=tsflags=nodocs update && \
   yum $DISABLES --disablerepo=rhel-fast-datapath --disablerepo=rhel-fast-datapath-beta -y --setopt=tsflags=nodocs install wget && \
