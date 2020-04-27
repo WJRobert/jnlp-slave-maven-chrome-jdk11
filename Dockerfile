@@ -21,8 +21,8 @@ RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentO
     
 # for main web interface:
 #EXPOSE 8080
-ENV maven.home /usr/share/maven
-ENV PATH /usr/share/maven/bin;/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin
+#ENV maven.home /usr/share/maven
+#ENV PATH /usr/share/maven/bin;/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin
 
 USER 1001
 
