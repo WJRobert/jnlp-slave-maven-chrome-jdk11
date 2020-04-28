@@ -11,8 +11,8 @@ RUN curl https://copr.fedorainfracloud.org/coprs/alsadi/dumb-init/repo/epel-7/al
   wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm && \
   wget http://mirror.centos.org/centos/7/os/x86_64/Packages/java-11-openjdk-11.0.6.10-3.el7.x86_64.rpm && \
-  yum $DISABLES -y install ./java-11-openjdk-11.0.4.11-1.el7_7.x86_64.rpm && \
-  alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin/java && \
+  yum $DISABLES -y install ./java-11-openjdk-11.0.6.10-3.el7.x86_64.rpm && \
+  alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.6.10-3.el7.x86_64/bin/java && \
   wget http://mirror.centos.org/centos/7/os/x86_64/Packages/maven-local-3.4.1-11.el7.noarch.rpm && \
   yum $DISABLES -y install ./maven-local-3.4.1-11.el7.noarch.rpm
     
