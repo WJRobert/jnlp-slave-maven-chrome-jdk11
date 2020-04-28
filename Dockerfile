@@ -16,19 +16,9 @@ RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentO
   curl https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
- # wget http://mirror.centos.org/centos/7/os/x86_64/Packages/maven-local-3.4.1-11.el7.noarch.rpm && \
- # yum $DISABLES --disableplugin=subscription-manager -y install ./maven-local-3.4.1-11.el7.noarch.rpm
-    
-# for main web interface:
-#EXPOSE 8080
-#ENV maven.home /usr/share/maven
-#ENV PATH /usr/share/maven/bin;/usr/lib/jvm/java-11-openjdk-11.0.7.10-4.el7_8.x86_64/bin
 
 USER 1001
 
-
-RUN java -version
-RUN mvn -version
-RUN google-chrome --version
+CMD ["mvn","-version","java","-version","google-chrome","--version"]
 #FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
 #FROM quay.io/openshift/origin-jenkins-agent-maven:4.1.0
