@@ -16,6 +16,8 @@ RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentO
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
-CMD ["mvn","-version","java","-version","google-chrome","--version"]
+RUN java -version
+RUN google-chrome --version
+RUN mvn -version
 #FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
 #FROM quay.io/openshift/origin-jenkins-agent-maven:4.1.0
