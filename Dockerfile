@@ -21,5 +21,14 @@ RUN  curl https://raw.githubusercontent.com/cloudrouter/centos-repo/master/CentO
 RUN java -version
 RUN google-chrome --version
 RUN mvn -version
-#FROM quay.io/openshift/jenkins-agent-maven-35-centos7:v4.0 - unauthorized: access to the requested resource is not authorized
-#FROM quay.io/openshift/origin-jenkins-agent-maven:4.1.0
+
+# Installing pre-requisites for Cypress testing tool
+RUN yum $DISABLES -y --setopt=tsflags=nodocs update && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install xorg-x11-server-Xvfb && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install gtk2-devel && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install gtk3-devel && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install libnotify-devel && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install GConf2 && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install nss && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install libXScrnSaver && \
+  yum $DISABLES -y --setopt=tsflags=nodocs install alsa-lib
