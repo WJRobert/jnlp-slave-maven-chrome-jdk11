@@ -7,7 +7,7 @@ This image contains Java, Maven, Chrome, and other packages needed to install an
 
 The base image used is `quay.io/openshift/origin-jenkins-agent-maven:4.6.0`.
 
-Available on [Docker Hub](#)
+Available on [Docker Hub](https://hub.docker.com/r/waynejrobert/jnlp-maven-chrome-jdk11-cypress)
 
 ## Tool Versions
 | Tool/Product | Version |
