@@ -33,7 +33,16 @@ RUN yum $DISABLES -y --setopt=tsflags=nodocs install nss
 RUN yum $DISABLES -y --setopt=tsflags=nodocs install libXScrnSaver
 RUN yum $DISABLES -y --setopt=tsflags=nodocs install alsa-lib
 
+# Installing pre-requisites for building npm modules
+RUN yum $DISABLES -y --setopt=tsflags=nodocs install gcc-c++ 
+RUN yum $DISABLES -y --setopt=tsflags=nodocs install make
+
+# Install NodeJS latest LTS version (Currently 14)
+RUN dnf module $DISABLES -y --setopt=tsflags=nodocs install nodejs:14
+
 #Validate installs
 RUN java -version
 RUN google-chrome --version
 RUN mvn -version
+RUN node --version
+RUN npm -version
