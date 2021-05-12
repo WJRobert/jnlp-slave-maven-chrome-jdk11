@@ -18,6 +18,11 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm
 # Install Firefox
 RUN yum $DISABLES -y --setopt=tsflags=nodocs install firefox
+# Install Edge
+RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
+  dnf config-manager --add-repo https://packages.microsoft.com/yumrepos/edge && \
+  mv /etc/yum.repos.d/packages.microsoft.com_yumrepos_edge.repo /etc/yum.repos.d/microsoft-edge-dev.repo && \
+  dnf $DISABLES -y --setopt=tsflags=nodocs install microsoft-edge-dev
  
 # Install Java
 RUN alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-0.el8_3.x86_64/bin/java
