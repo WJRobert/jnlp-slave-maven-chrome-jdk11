@@ -16,6 +16,9 @@ RUN yum $DISABLES -y --setopt=tsflags=nodocs install wget
 # Install Chrome
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
   yum $DISABLES -y install ./google-chrome-stable_current_x86_64.rpm
+# Install Firefox
+RUN yum $DISABLES -y --setopt=tsflags=nodocs install firefox
+ 
 # Install Java
 RUN alternatives --set java /usr/lib/jvm/java-11-openjdk-11.0.11.0.9-0.el8_3.x86_64/bin/java
 # Install Maven
