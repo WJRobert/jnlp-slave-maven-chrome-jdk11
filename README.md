@@ -3,7 +3,9 @@ This project is forked from [maybeec / jnlp-slave-maven-chrome-jdk11](https://gi
 
 This Jenkins agent image is based on OpenShift (Centos 8 based).
 
-This image contains Java, Maven, Chrome, and other packages needed to install and run the Cypress testing tool.
+This image contains Java, Maven, Chrome, NodeJS, and other packages needed to install and run the Cypress testing tool.
+
+This image also contains additional browsers such as Edge and Firefox for testing purposes.
 
 The base image used is `quay.io/openshift/origin-jenkins-agent-maven:4.6.0`.
 
@@ -16,4 +18,7 @@ Available on [Docker Hub](https://hub.docker.com/r/waynejrobert/jnlp-maven-chrom
 | OpenShift | 4 |
 | Java | 11 |
 | Maven | 3.5.4 |
+| NodeJS | 14.16.1 LTS |
 | Chrome | Latest version at build time |
+| Edge | Latest version at build time |
+| Firefox | Latest version at build time |
