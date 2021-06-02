@@ -48,9 +48,12 @@ RUN yum $DISABLES -y --setopt=tsflags=nodocs install make
 # Install NodeJS latest LTS version (Currently 14)
 RUN dnf module $DISABLES -y --setopt=tsflags=nodocs install nodejs:14
 
-#Validate installs
+# Validate installs
 RUN java -version
 RUN google-chrome --version
 RUN mvn -version
 RUN node --version
 RUN npm -version
+
+# Fix for Cypress+Firefox Hanging bug - https://github.com/cypress-io/cypress/issues/6449
+RUN export MOZ_FORCE_DISABLE_E10S=1
